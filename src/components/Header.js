@@ -9,16 +9,14 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { BsLinkedin, BsInstagram } from "react-icons/bs";
-import { BsFillMoonFill, BsFillSunFill } from "react-icons/bs";
-import { FaGitlab } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
+import { BsFillMoonFill, BsFillSunFill, BsGithub } from "react-icons/bs";
+
+import { useDispatch } from "react-redux";
 import changeTheme from "../actions/colorActions";
 
 function DarkMode() {
   const { colorMode, toggleColorMode } = useColorMode();
   const dispatch = useDispatch();
-
-  const theme = useSelector((state) => state.colorMode);
 
   const changeColor = () => {
     toggleColorMode();
@@ -65,7 +63,7 @@ const Header = () => {
                 size="lg"
                 fontSize="2.2rem"
               >
-                Fs.
+                Fs
               </Heading>
             </Link>
           </Flex>
@@ -75,8 +73,9 @@ const Header = () => {
             gap="6"
             justifyContent="space-evenly"
             fontWeight="bold"
-            fontSize="1.4rem"
+            // fontSize="1.4rem"
             color="blue.500"
+            fontSize={{ md: "1.4rem", sm: "1rem", base: "1rem" }}
           >
             <Link to="/about" as={RouterLink} _hover={{ textDecor: "none" }}>
               About
@@ -93,20 +92,24 @@ const Header = () => {
           <Box display={{ lg: "block", md: "none", base: "none" }}>
             <Flex>
               <Link
-                href="https://gitlab.com/fs288080"
+                href="https://github.com/faisy25"
                 target="_blank"
-                color="orange.500"
+                color="gray.500"
               >
-                <Icon as={FaGitlab} w="5" h="5" mx="2" />
+                <Icon as={BsGithub} w="5" h="5" mx="2" />
               </Link>
               <Link
-                href="https://www.linkedin.com/in/faisal-shaikh-98b8a61ab/"
+                href="https://www.linkedin.com/in/faisy7/"
                 color="blue.700"
                 target="_blank"
               >
                 <Icon as={BsLinkedin} w="5" h="5" mx="2" />
               </Link>
-              <Link href="/" color="brown" target="_blank">
+              <Link
+                href="https://www.instagram.com/freezycoder/"
+                color="brown"
+                target="_blank"
+              >
                 <Icon as={BsInstagram} w="5" h="5" mx="2" />
               </Link>
             </Flex>

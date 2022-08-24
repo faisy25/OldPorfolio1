@@ -17,27 +17,32 @@ const ProjectScreen = () => {
           >
             <Heading
               as="h2"
-              fontSize={{ lg: "5xl", base: "3xl" }}
+              fontSize={{ lg: "5xl", sm: "3xl", base: "2xl" }}
               fontWeight="bold"
               color="#3182CE"
-              my="10"
+              mt="10"
+              mb={{ md: "10", sm: "5", base: "3" }}
             >
               My Recent Projects
             </Heading>
             <Flex direction="column" justifyContent="center" wrap="wrap">
               <ProjectCard
-                my="10"
+                my={{ md: "10", sm: "5" }}
                 source="https://pokemon-viewer-my-project.netlify.app/"
                 git="https://gitlab.com/fs288080/pokemon-viewer"
                 src="images/pook.jpeg"
                 desc="The App is Built in Vanilla Javascript. It Displays all the Pokemons available till date wiht the help of Poke Api."
               />
               <ProjectCard
-                my="10"
+                my={{ md: "10", sm: "5" }}
                 source="https://demon-my.herokuapp.com/"
                 git="https://gitlab.com/fs288080/demon"
                 src="images/demon.jpeg"
-                desc="This is a Full Stack Javascript web App for ecommerce store "
+                desc="E-Commerce Website completely built in MERN stack from
+                Login/Signup to Paypal Payment gateway.
+                Use react in frontend with redux state management, backend in
+                node js & data stored in mongodb. Work on rest api ,
+                authentication, cart , order, login , MVC pattern , chakra ui . "
               />
             </Flex>
             <HeroThree />

@@ -8,14 +8,23 @@ export const Card = ({ children, ic }) => {
         justifyContent="center"
         alignItems="center"
         borderColor="2px solid #3182CE"
-        p="9"
+        p={{ md: "9", sm: "6", base: "4" }}
         shadow="1px 1px 4px 3px #3182CE"
         _hover={{ shadow: "5px 5px 5px 5px #3182CE" }}
         rounded="md"
         backdropFilter="saturate(180%) blur(10px)"
       >
-        <Icon as={ic} my="3" w="40" h="20" />
-        <Heading my="3" as="h3" fontSize="3xl">
+        <Icon
+          as={ic}
+          my="3"
+          w={{ md: "40", sm: "30", base: "20" }}
+          h={{ md: "20", sm: "10", base: "10" }}
+        />
+        <Heading
+          my="3"
+          as="h3"
+          fontSize={{ md: "3xl", sm: "2xl", base: "1.5xl" }}
+        >
           {children}
         </Heading>
       </Flex>
@@ -34,7 +43,6 @@ export const ProjectCard = ({ desc, git, source, src }) => {
         p="3"
         shadow="lg"
         dropShadow="ld"
-        shadowColor="#3182CE"
         rounded="md"
         mt="6"
         wrap="wrap"
@@ -42,16 +50,24 @@ export const ProjectCard = ({ desc, git, source, src }) => {
         backdropFilter="saturate(180%) blur(10px)"
       >
         <Image
-          my="8"
+          my={{ md: "8", sm: "6", base: "4" }}
           objectFit="cover"
           src={src}
-          w={{ lg: "500px", base: "200px" }}
+          // w={{ lg: "500px", base: "200px" }}
           h={{ lg: "200px", base: "100px" }}
+          maxW="100%"
         />
-        <Text my="8">{desc}</Text>
-        <Flex my="6" gap="10">
+        <Text my={{ md: "8", sm: "6", base: "4" }} textAlign="center">
+          {desc}
+        </Text>
+        <Flex
+          my="6"
+          gap={{ md: "10", sm: "8", base: "6" }}
+          justifyContent="center"
+          alignItems="center"
+        >
           <Link
-            p="5"
+            p={{ md: "5", sm: "4", base: "3" }}
             border="1px solid #3182CE"
             rounded="md"
             shadow="md"
@@ -59,10 +75,10 @@ export const ProjectCard = ({ desc, git, source, src }) => {
             href={git}
             target="_blank"
           >
-            Browse Code
+            Code
           </Link>
           <Link
-            p="5"
+            p={{ md: "5", sm: "4", base: "3" }}
             border="1px solid #3182CE"
             rounded="md"
             shadow="md"

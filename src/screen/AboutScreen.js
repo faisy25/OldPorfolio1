@@ -1,18 +1,20 @@
-import { Flex, Text, Heading, Image, Container } from "@chakra-ui/react";
+import { Flex, Text, Heading, Image, Container, Grid } from "@chakra-ui/react";
 import {
   DiJavascript1,
   DiNodejs,
   DiHtml5,
   DiCss3,
   DiReact,
-  DiMongodb
+  DiMongodb,
+  DiMysql
 } from "react-icons/di";
 import {
   SiRedux,
   SiChakraui,
   SiVisualstudiocode,
   SiPostman,
-  SiBootstrap
+  SiBootstrap,
+  SiLeetcode
 } from "react-icons/si";
 import { BiFootball } from "react-icons/bi";
 import { CgGames } from "react-icons/cg";
@@ -49,19 +51,21 @@ const AboutScreen = () => {
     { skill: "HTML", ic: DiHtml5 },
     { skill: "CSS", ic: DiCss3 },
     { skill: "Chakra UI", ic: SiChakraui },
-    { skill: "Bootstrap", ic: SiBootstrap }
+    { skill: "Bootstrap", ic: SiBootstrap },
+    { skill: "MySql", ic: DiMysql }
   ];
 
   const tools = [
     { skill: "VsCode", ic: SiVisualstudiocode },
     { skill: "PostMan", ic: SiPostman },
-    { skill: "Git", ic: AiFillGithub }
+    { skill: "Git", ic: AiFillGithub },
+    { skill: "Leetcode", ic: SiLeetcode }
   ];
 
   const others = [
     { skill: "Football", ic: BiFootball },
     { skill: "Cricket", ic: GiCricketBat },
-    { skill: "Video games", ic: CgGames },
+    { skill: "V Games", ic: CgGames },
     { skill: "Fitness", ic: IoIosFitness }
   ];
 
@@ -70,39 +74,36 @@ const AboutScreen = () => {
       <Particle />
       <Flex w="full" zIndex="100" marginTop="40px">
         <Container maxWidth="container.xl" mt="100px">
-          <Flex direction="row" wrap="wrap" justifyContent="space-evenly">
+          <Grid templateColumns={{ md: "6fr 6fr", sm: "12fr", base: "12fr" }}>
             <Flex mx="10" direction="column">
               <Heading
                 as="h2"
                 fontWeight="medium"
-                fontSize={{ lg: "4xl", base: "2xl" }}
+                fontSize={{ lg: "4xl", md: "3xl", sm: "2xl", base: "1xl" }}
               >
                 Know who <BlueText>I am,</BlueText>
               </Heading>
               <Text
-                fontSize={{ lg: "2xl", base: "xl" }}
+                fontSize={{ lg: "2xl", base: "1xl" }}
                 fontWeight="medium"
-                mt="3"
-                mb="2"
+                my="1"
               >
-                Hello everyone , I'm <BlueText>Faisal Shaikh</BlueText> <br />
-                born and broughtup in Mumbai , India.
+                Hello everyone , I'm <BlueText>Faisal Shaikh</BlueText> born and
+                broughtup in Mumbai , India.
               </Text>
               <Text
-                fontSize={{ lg: "2xl", base: "xl" }}
+                fontSize={{ lg: "2xl", base: "1xl" }}
                 fontWeight="medium"
-                mt="3"
-                mb="2"
+                my="1"
               >
                 I have completed my{" "}
                 <BlueText>B.E in Electronics & Tele-Communication</BlueText>{" "}
-                from <br /> Don Bosco Institue of Technology in 2021.
+                from Don Bosco Institue of Technology in 2021.
               </Text>
               <Text
-                fontSize={{ lg: "2xl", base: "xl" }}
+                fontSize={{ lg: "2xl", base: "1xl" }}
                 fontWeight="medium"
-                mt="3"
-                mb="2"
+                my="1"
               >
                 I am fluent in <BlueText>JavaScript</BlueText> and in{" "}
                 <BlueText>MERN Stack</BlueText> .
@@ -111,12 +112,12 @@ const AboutScreen = () => {
             <Flex justifyContent="center" alignItems="center">
               <Image
                 src="images/about.svg"
-                w="400px"
-                h="300px"
-                mt={{ md: "20px", base: "2rem" }}
+                w={{ md: "450px", sm: "350px", base: "300px" }}
+                h={{ md: "300px", sm: "250px", base: "200px" }}
+                mt="20px"
               />
             </Flex>
-          </Flex>
+          </Grid>
 
           <Flex
             mt="10"
@@ -124,7 +125,7 @@ const AboutScreen = () => {
             justifyContent="center"
             alignItems="center"
           >
-            <Heading as="h2" fontSize={{ md: "5xl", base: "3xl" }}>
+            <Heading as="h2" fontSize={{ md: "5xl", sm: "3xl", base: "2xl" }}>
               <BlueText>Professional</BlueText> Skillset
             </Heading>
             <Flex
@@ -132,54 +133,60 @@ const AboutScreen = () => {
               wrap="wrap"
               justifyContent="space-evenly"
               gap="10"
-              mt="20"
+              mt={{ md: "20", sm: "10", base: "10" }}
             >
               {skill.map((item) => (
-                <Card ic={item.ic}>{item.skill}</Card>
+                <Card key={item.skill} ic={item.ic}>
+                  {item.skill}
+                </Card>
               ))}
             </Flex>
           </Flex>
 
           <Flex
-            mt="20"
+            mt={{ md: "20", sm: "10", base: "10" }}
             direction="column"
             justifyContent="center"
             alignItems="center"
           >
-            <Heading as="h2" fontSize={{ md: "5xl", base: "3xl" }}>
+            <Heading as="h2" fontSize={{ md: "5xl", sm: "3xl", base: "2xl" }}>
               <BlueText>Tools</BlueText> Skillset
             </Heading>
             <Flex
               direction="row"
               wrap="wrap"
               justifyContent="space-evenly"
-              mt="20"
+              mt={{ md: "20", sm: "10", base: "10" }}
               gap="10"
             >
               {tools.map((item) => (
-                <Card ic={item.ic}>{item.skill}</Card>
+                <Card key={item.skill} ic={item.ic}>
+                  {item.skill}
+                </Card>
               ))}
             </Flex>
           </Flex>
 
           <Flex
-            mt="20"
+            mt={{ md: "20", sm: "10", base: "10" }}
             direction="column"
             justifyContent="center"
             alignItems="center"
           >
-            <Heading as="h2" fontSize={{ md: "5xl", base: "3xl" }}>
+            <Heading as="h2" fontSize={{ md: "5xl", sm: "3xl", base: "2xl" }}>
               <BlueText>Other</BlueText> Skillset
             </Heading>
             <Flex
               direction="row"
               wrap="wrap"
               justifyContent="space-evenly"
-              mt="20"
+              mt={{ md: "20", sm: "10", base: "10" }}
               gap="10"
             >
               {others.map((item) => (
-                <Card ic={item.ic}>{item.skill}</Card>
+                <Card key={item.skill} ic={item.ic}>
+                  {item.skill}
+                </Card>
               ))}
             </Flex>
           </Flex>
@@ -194,8 +201,8 @@ const AboutScreen = () => {
               Days <BlueText>I code </BlueText>
             </Heading>
             <Flex
-              p="10"
-              mt="10"
+              p={{ md: "10", sm: "5", base: "5" }}
+              mt={{ md: "10", sm: "5", base: "5" }}
               direction="row"
               justifyContent="center"
               wrap="wrap"

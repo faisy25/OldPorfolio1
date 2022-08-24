@@ -11,16 +11,18 @@ import { Flex } from "@chakra-ui/react";
 const App = () => {
   return (
     <>
-      <Header />
-      <Flex>
-        <Routes>
-          <Route path="/" element={<HomeScreen />} />
-          <Route path="/about" element={<AboutScreen />} />
-          <Route path="/projects" element={<ProjectScreen />} />
-          <Route path="/resume" element={<ResumeScreen />} />
-        </Routes>
+      <Flex direction="column" minH="100vh">
+        <Header />
+        <Flex>
+          <Routes>
+            <Route path="/" element={<HomeScreen />} />
+            <Route path="/about" element={<AboutScreen />} />
+            <Route path="/projects" element={<ProjectScreen />} />
+            <Route path="/resume" element={<ResumeScreen />} />
+          </Routes>
+        </Flex>
+        <Footer />
       </Flex>
-      <Footer />
     </>
   );
 };
