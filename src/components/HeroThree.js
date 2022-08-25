@@ -65,7 +65,7 @@ const HeroThree = () => {
 
               <Flex mt="4" direction="row" justifyContent="space-evenly">
                 <Link
-                  href="https://gitlab.com/fs288080"
+                  href="https://leetcode.com/faisy7"
                   color="yellow.600"
                   mx="3"
                   target="_blank"
